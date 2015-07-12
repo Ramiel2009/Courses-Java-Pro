@@ -62,7 +62,7 @@ public class Main {
               Output.outputToFile(bike.getType(), bike.getColor(), bike.getPrice());
           }
       }
-      Output.outPrice(totalPrice);
+      Output.outPrice(totalPrice);  //EOF
       System.out.println("Total amount: " + totalPrice);
   }
 }

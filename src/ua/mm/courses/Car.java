@@ -1,8 +1,5 @@
 package ua.mm.courses;
 
-/**
- * Created by Maxim on 11.07.2015.
- */
 public class Car {
     private String type;
     private String color;
