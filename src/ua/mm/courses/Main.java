@@ -9,7 +9,7 @@ public class Main {
       float [] numbersInt = new float [numbers.length];
       float totalPrice=0;
       Output.outputPath = "D:/OutputData.txt";                  //path to output file
-      Output.startOutput(); //open brackets in the text file
+      Output.startOutput();                                     //open brackets in the text file
 
       for(int a = 0; a< numbers.length; a++){
         numbersInt[a]= Float.parseFloat(numbers[a]);}
