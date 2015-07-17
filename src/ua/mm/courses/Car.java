@@ -1,9 +1,13 @@
 package ua.mm.courses;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Cloneable, Serializable{
     private String type;
     private String color;
     private float price;
+    private final long serialVersionUID =1l;
+
     Car(){
         type = "Car";
         color = "White";
@@ -33,5 +37,10 @@ public class Car {
 
     public void setPrice(float weight) {
         this.price = weight;
+    }
+
+     public Car clone()throws CloneNotSupportedException{
+        Car clone = (Car)super.clone();
+        return clone;
     }
 }

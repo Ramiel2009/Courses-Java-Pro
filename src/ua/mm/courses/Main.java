@@ -1,10 +1,10 @@
 package ua.mm.courses;
 
-import java.io.IOException;
+import java.io.*;
 
-public class Main {
+public class Main implements Serializable{
     static int c=0;
-  public static void main (String []args) throws IOException{
+  public static void main (String []args) throws IOException {
       String [] numbers = ReadFile.getText("D:/InputData.txt"); //path to input file
       float [] numbersInt = new float [numbers.length];
       float totalPrice=0;
@@ -60,10 +60,30 @@ public class Main {
                       + bike.getColor() + ", Price: " + bike.getPrice() + "\n");
               c++;
               Output.outputToFile(bike.getType(), bike.getColor(), bike.getPrice());
+
           }
       }
       Output.outPrice(totalPrice);  //EOF
       System.out.println("Total amount: " + totalPrice);
+
+      ///Cloning and serializing
+      Car batcar = new Car();
+      File fw = new File("d:/bc.dat");
+      try {
+          Car clone;
+          clone=batcar.clone();
+          clone.setType("BatCar");
+          clone.setColor("black");
+          clone.setPrice(69);
+          ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream(fw));
+          ostream.writeObject(batcar);
+          ostream.close();
+          System.out.println("Here's a brand new model for you! "+clone.getType() + " in brutal "+
+          clone.getColor() + ". And now it's only for $"+clone.getPrice()+"00!");
+      }
+      catch (Exception ex){
+          System.out.println(ex.getMessage());
+      }
   }
 }
 
