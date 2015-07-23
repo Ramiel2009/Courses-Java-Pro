@@ -10,7 +10,7 @@ public class Output {
     public static void outputToFile(String value1, String value2, float value3) //type, color, price
             throws IOException {
         FileWriter fw = new FileWriter(outputPath, true);
-            fw.write("{Object" + Main.c + ":{type:" + value1 + ", color:" + value2 + ", price:" + value3 + "}},");
+            fw.write("{Object" + Main.calculatePosition + ":{\"type\":" + "\""+value1+"\""+", \"color:\"" + value2 + ", price:" + value3 + "}},");
         fw.write(System.lineSeparator());
         fw.close();
     }
