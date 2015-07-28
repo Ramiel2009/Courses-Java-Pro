@@ -14,6 +14,7 @@ public class Main implements Serializable{
       Output.startOutput();                                     //open brackets in the text file
 
 
+
       for(int a = 0; a< numbers.length; a++){
         numbersInt[a]= Float.parseFloat(numbers[a]);
       }
@@ -64,6 +65,7 @@ public class Main implements Serializable{
           clone.setType("BatCar");
           clone.setColor("black");
           clone.setPrice(69);
+
           ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream(fw));
           ostream.writeObject(batcar);
           ostream.close();
